@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4276008024279690656}
   - component: {fileID: 4578086935084290013}
   - component: {fileID: 5488826532819278510}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: candy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ba93d2add6a7c44ea8bed5d335f6f36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  disappearYLevel: -30
 --- !u!54 &4578086935084290013
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -135,7 +136,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 385
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

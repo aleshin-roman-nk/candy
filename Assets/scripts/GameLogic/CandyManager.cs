@@ -1,32 +1,78 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class CandyManager : MonoBehaviour
 {
 	[SerializeField] private Vector3 candyArea = new Vector3 (1, 1, 1);
 	[SerializeField] private Candy[] candyPrefabs;
-	[SerializeField] private int candyCount = 400;
+	[SerializeField] private int candyMaxCount = 400;
 
-	private List<Candy> candies = new List<Candy>();
+	[SerializeField] private TextMeshProUGUI candyCountText;
+
+	private PoolMulti<Candy> candiesPool;
+
+	private bool dropCandy = false;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		for (int i = 0; i < candyCount; i++)
-		{
-			var iCandy = Random.Range (0, candyPrefabs.Length);
+		candiesPool = new PoolMulti<Candy>(candyPrefabs, candyMaxCount, gameObject.transform);
+		candiesPool.autoExpand = true;
 
-			var c = Instantiate(candyPrefabs[iCandy], GetRandomPointInArea(), Random.rotation);
+		addCandies(candyMaxCount);
 
-			candies.Add(c);
-		}
+		StartCoroutine(observeCandyCountCoroutine());
+		StartCoroutine(dropCandyCoroutine());
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
-		
+		candyCountText.text = candiesPool.ActiveObjects.ToString();
+	}
+
+	private IEnumerator observeCandyCountCoroutine()
+	{
+		while (true) 
+		{
+			yield return new WaitForSeconds(0.5f);
+
+			// If the lack of candies is greater than N, call addCandies(N)
+			//addCandies(candyMaxCount - candiesPool.ActiveObjects);
+			if (candyMaxCount > candiesPool.ActiveObjects)
+				dropCandy = true;
+			else
+				dropCandy = false;
+		}
+	}
+
+	private IEnumerator dropCandyCoroutine()
+	{
+		while (true)
+		{
+			yield return new WaitForSeconds(0.2f);
+			if (dropCandy)
+				addCandies(3);
+		}
+	}
+
+	private void addCandy()
+	{
+		var iCandy = Random.Range(0, candyPrefabs.Length);
+
+		var candy = candiesPool.GetFreeElement();
+		candy.transform.position = GetRandomPointInArea();
+		candy.transform.rotation = Random.rotation;
+	}
+
+	private void addCandies(int c)
+	{
+		for (int i = 0; i < c; i++)
+		{
+			addCandy();
+		}
 	}
 
 	private void OnDrawGizmos()

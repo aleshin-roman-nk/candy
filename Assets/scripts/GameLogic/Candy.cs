@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Candy : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+	[SerializeField] private float disappearYLevel = -2;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	// Update is called once per frame
+	void Update()
+	{
+		if (transform.position.y < disappearYLevel) gameObject.SetActive(false);
+	}
 }
