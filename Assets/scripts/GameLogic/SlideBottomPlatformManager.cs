@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
-using TouchScript.Gestures;
-using TouchScript.Gestures.TransformGestures;
+//using TouchScript.Gestures;
+//using TouchScript.Gestures.TransformGestures;
 using UnityEngine;
 
 public class SlideBottomPlatformManager : MonoBehaviour
 {
-	private PressGesture pressGesture;
-	private ReleaseGesture releaseGesture;
-	private TransformGesture transformGesture;
+	//private PressGesture pressGesture;
+	//private ReleaseGesture releaseGesture;
+	//private TransformGesture transformGesture;
 
 	// Start is called before the first frame update
 	void Start()
 	{
+		
 		//pressGesture = GetComponent<PressGesture>();
 		//pressGesture.Pressed += PressGesture_Pressed;
 

@@ -23,8 +23,8 @@ public class CandyManager : MonoBehaviour
 
 		addCandies(candyMaxCount);
 
-		StartCoroutine(observeCandyCountCoroutine());
-		StartCoroutine(dropCandyCoroutine());
+		//StartCoroutine(observeCandyCountCoroutine());
+		//StartCoroutine(dropCandyCoroutine());
 	}
 
 	// Update is called once per frame
