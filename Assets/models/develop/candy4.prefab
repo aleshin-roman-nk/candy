@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4276008024279690656}
   - component: {fileID: 4578086935084290013}
   - component: {fileID: 5488826532819278510}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: candy4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 896
+    m_Bits: 640
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0

@@ -1,47 +1,52 @@
 using System.Collections;
 using System.Collections.Generic;
 //using TouchScript.Gestures;
-//using TouchScript.Gestures.TransformGestures;
+using TouchScript.Gestures.TransformGestures;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class SlideBottomPlatformManager : MonoBehaviour
 {
-	//private PressGesture pressGesture;
-	//private ReleaseGesture releaseGesture;
-	//private TransformGesture transformGesture;
+	[SerializeField] private TrowingObject pulseObjectPrefab;
+	[SerializeField] private GameObject pointerVis;
+
+	[SerializeField] private Transform upPoint;
+	[SerializeField] private Transform downPoint;
+
+	private TransformGesture transformGesture;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		
-		//pressGesture = GetComponent<PressGesture>();
-		//pressGesture.Pressed += PressGesture_Pressed;
-
-		//releaseGesture = GetComponent<ReleaseGesture>();
-		//releaseGesture.Released += ReleaseGesture_Released;
-
-		//transformGesture = GetComponent<TransformGesture>();
-		//transformGesture.Transformed += TransformGesture_Transformed;
+		transformGesture = GetComponent<TransformGesture>();
+		transformGesture.Transformed += TransformGesture_Transformed;
 	}
 
 	private void TransformGesture_Transformed(object sender, System.EventArgs e)
 	{
-		Debug.Log("TransformGesture_Transformed");
+		var ray = Camera.main.ScreenPointToRay(transformGesture.ScreenPosition);
+		RaycastHit hit;
+
+		int platformLayer = LayerMask.GetMask("slide-bottom");
+
+		if (Physics.Raycast(ray, out hit, Mathf.Infinity, platformLayer))
+		{
+			// If the ray hits something on the "platform" layer
+			Vector3 hitPoint = hit.point;
+
+			// You can now use the hit.point to do whatever you need
+
+			TrowingObject o = Instantiate(pulseObjectPrefab, hitPoint, Quaternion.identity);
+			o.SetYLevels(upPoint.position.y, downPoint.position.y);
+		}
 	}
 
-	private void ReleaseGesture_Released(object sender, System.EventArgs e)
+	private void OnDrawGizmos()
 	{
-		Debug.Log("ReleaseGesture_Released");
-	}
+		Gizmos.color = Color.green;
+		Gizmos.DrawSphere(upPoint.transform.position, 1f);
 
-	private void PressGesture_Pressed(object sender, System.EventArgs e)
-	{
-		Debug.Log("PressGesture_Pressed");
-	}
-
-	// Update is called once per frame
-	void Update()
-	{
-		
+		Gizmos.color = Color.red;
+		Gizmos.DrawSphere(downPoint.transform.position, 1f);
 	}
 }
