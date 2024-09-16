@@ -36,6 +36,10 @@ public class TrowingObject : MonoBehaviour
 
 		var levelForce = Mathf.Lerp(highForce, lowForce, currentYLevelRelativeLowY / allYRange);
 
-		rbcollision.AddForce(impulseStrength * levelForce * direction, ForceMode.Impulse);
+		//rbcollision.AddForce(impulseStrength * levelForce * direction, ForceMode.Impulse);
+
+		var c = rbcollision.gameObject.GetComponent<Candy>();
+
+		c.FlyAndReturn(direction);
 	}
 }
