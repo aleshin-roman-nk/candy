@@ -25,20 +25,20 @@ public class Candy : MonoBehaviour
 		if (transform.position.y < disappearYLevel) gameObject.SetActive(false);
 	}
 
-	public void FlyAndReturn(Vector3 goDirection)
+	public void FlyAndReturn(Vector3 goDirection, float force)
 	{
 		if (isFlying) return;
 
-		StartCoroutine(flyCoroutine(30 * goDirection));
+		StartCoroutine(flyCoroutine(30 * goDirection, force));
 	}
 
-	private IEnumerator flyCoroutine(Vector3 toPoint)
+	private IEnumerator flyCoroutine(Vector3 toPoint, float force)
 	{
 		isFlying = true;
 
 		animateFly.valueA = transform.position;
 		animateFly.valueB = toPoint;
-		animateFly.duration = 0.7f;
+		animateFly.duration = force;
 
 		var r = GetComponent<Rigidbody>();
 		r.useGravity = false;
@@ -52,7 +52,7 @@ public class Candy : MonoBehaviour
 		while(animateFly.update(null))
 			yield return null;
 
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(4f);
 
 		animateFly.valueA = transform.position;
 		animateFly.valueB = restPosition;

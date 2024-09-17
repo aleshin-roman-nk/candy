@@ -5,7 +5,10 @@ using UnityEngine;
 
 public class TrowingObject : MonoBehaviour
 {
-	[SerializeField] private Transform pulsePoint;
+	[SerializeField] private Transform pulsePointA;
+	[SerializeField] private Transform pulsePointB;
+	[SerializeField] private float pulsePointAForce = 1;
+	[SerializeField] private float pulsePointBForce = 2;
 	[SerializeField] private float impulseStrength;
 	[SerializeField] private float lowForce;
 	[SerializeField] private float highForce;
@@ -29,17 +32,32 @@ public class TrowingObject : MonoBehaviour
 	{
 		var rbcollision = other.gameObject.GetComponent<Rigidbody>();
 
-		Vector3 direction = (other.gameObject.transform.position - pulsePoint.position).normalized;
+		Vector3 directionA = pulsePointAForce * (other.gameObject.transform.position - pulsePointA.position).normalized;
+		Vector3 directionB = pulsePointBForce * (other.gameObject.transform.position - pulsePointB.position).normalized;
+		Vector3 direction = (directionA + directionB).normalized;
+
 		var allYRange = _upY - _downY;
 
 		var currentYLevelRelativeLowY = transform.position.y - _downY;
 
-		var levelForce = Mathf.Lerp(highForce, lowForce, currentYLevelRelativeLowY / allYRange);
+		var levelForce = Mathf.Lerp(lowForce, highForce, currentYLevelRelativeLowY / allYRange);
 
 		//rbcollision.AddForce(impulseStrength * levelForce * direction, ForceMode.Impulse);
 
 		var c = rbcollision.gameObject.GetComponent<Candy>();
 
-		c.FlyAndReturn(direction);
+		c.FlyAndReturn(direction, levelForce);
+	}
+
+	private void OnDrawGizmos()
+	{
+		Gizmos.color = Color.green;
+		Gizmos.DrawSphere(transform.position, 0.1f);
+
+		Gizmos.color = Color.red;
+		Gizmos.DrawSphere(pulsePointA.position, 0.1f);
+
+		Gizmos.color = Color.red;
+		Gizmos.DrawSphere(pulsePointB.position, 0.1f);
 	}
 }
