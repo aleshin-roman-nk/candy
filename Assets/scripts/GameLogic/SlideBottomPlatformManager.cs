@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-//using TouchScript.Gestures;
+using TouchScript.Gestures;
 using TouchScript.Gestures.TransformGestures;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
@@ -13,18 +13,18 @@ public class SlideBottomPlatformManager : MonoBehaviour
 	[SerializeField] private Transform upPoint;
 	[SerializeField] private Transform downPoint;
 
-	private TransformGesture transformGesture;
+	private PressGesture pressGesture;
 
 	// Start is called before the first frame update
 	void Start()
 	{
-		transformGesture = GetComponent<TransformGesture>();
-		transformGesture.Transformed += TransformGesture_Transformed;
+		pressGesture = GetComponent<PressGesture>();
+		pressGesture.Pressed += PressGesture_Pressed;
 	}
 
-	private void TransformGesture_Transformed(object sender, System.EventArgs e)
+	private void PressGesture_Pressed(object sender, System.EventArgs e)
 	{
-		var ray = Camera.main.ScreenPointToRay(transformGesture.ScreenPosition);
+		var ray = Camera.main.ScreenPointToRay(pressGesture.ScreenPosition);
 		RaycastHit hit;
 
 		int platformLayer = LayerMask.GetMask("slide-bottom");
@@ -36,7 +36,8 @@ public class SlideBottomPlatformManager : MonoBehaviour
 
 			// You can now use the hit.point to do whatever you need
 
-			TrowingObject o = Instantiate(pulseObjectPrefab, hitPoint, Quaternion.identity);
+			//TrowingObject o = Instantiate(pulseObjectPrefab, hitPoint, Quaternion.identity);
+			TrowingObject o = Instantiate(pulseObjectPrefab, hitPoint, hit.collider.gameObject.transform.rotation);
 			o.SetYLevels(upPoint.position.y, downPoint.position.y);
 		}
 	}
