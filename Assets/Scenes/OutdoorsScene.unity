@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -1278,7 +1278,6 @@ MonoBehaviour:
   - {fileID: 8912995021747685226, guid: c5b310250f76ecd428c8573e22a5a817, type: 3}
   - {fileID: -882742126938989124, guid: 3b66feed51c27bf4fae0d3c02204ec0a, type: 3}
   - {fileID: 4340153646760874029, guid: acfd15fdff77405449d53842b424f050, type: 3}
-  - {fileID: 2002296335286546178, guid: fe2a0c6e26afab24db1497d576b3453a, type: 3}
   - {fileID: 6343358796641991898, guid: be036d169b12dd24db28fc86da1c7034, type: 3}
   - {fileID: 8000189212158939904, guid: 73af0844e258ebf4d88d01acfe290e91, type: 3}
   - {fileID: 6112177510248178989, guid: 196787a7e2f97574e89502934a4655f4, type: 3}
@@ -1294,7 +1293,9 @@ MonoBehaviour:
   - {fileID: -4248203959989472387, guid: 958115844f583204c9eaf6367c0b47f4, type: 3}
   - {fileID: -5595695415594345751, guid: e5539a1d405e8424dbf511fb9ec4f3e5, type: 3}
   - {fileID: -4123050452020363750, guid: 53431ae5d8d3f1d4480525c72fa8feaf, type: 3}
-  candyMaxCount: 400
+  - {fileID: 7779894167706828380, guid: 089e2be050a39084cb5083dacbcc0704, type: 3}
+  - {fileID: 5341451915104831505, guid: ec8e5f5b3641f8043ad498524c2da1c9, type: 3}
+  candyMaxCount: 450
   candyCountText: {fileID: 489978697}
 --- !u!1 &1205587930
 GameObject:
