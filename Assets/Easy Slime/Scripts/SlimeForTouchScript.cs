@@ -683,48 +683,16 @@ namespace EasySlimeTouchScript
 		#endregion
 
 		#region InputHandling
-		//public void OnDrag(PointerEventData eventData)
-		//{
-		//	Vector3 screenPos = eventData.position;
-		//	screenPos.z = m_Camera.transform.InverseTransformPoint(transform.position).z;
-		//	Vector3 pointWorld = m_Camera.ScreenToWorldPoint(screenPos);
-		//	Vector2 pointLocal = transform.InverseTransformPoint(pointWorld);
-
-		//	for (int i = 0; i < m_Pointers.Length; i++)
-		//	{
-		//		PointerData data = m_Pointers[i];
-		//		if (data.pointerId == eventData.pointerId)
-		//		{
-		//			data.previousPosition = data.position;
-		//			data.position = pointLocal;
-		//			m_Pointers[i] = data;
-		//			break;
-		//		}
-		//	}
-		//}
-
 		public void OnDrag(PointerData eventData)
 		{
-			PointerData data;
-
 			Vector3 screenPos = eventData.position;
 			screenPos.z = m_Camera.transform.InverseTransformPoint(transform.position).z;
 			Vector3 pointWorld = m_Camera.ScreenToWorldPoint(screenPos);
 			Vector2 pointLocal = transform.InverseTransformPoint(pointWorld);
 
-			if (m_Pointers.Length == 0)
-			{
-				data.position = pointLocal;
-				data.previousPosition = pointLocal;
-				data.delta = Vector2.zero;
-				data.pointerId = eventData.pointerId;
-
-				m_Pointers.Add(data);
-			}
-			
 			for (int i = 0; i < m_Pointers.Length; i++)
 			{
-				data = m_Pointers[i];
+				PointerData data = m_Pointers[i];
 				if (data.pointerId == eventData.pointerId)
 				{
 					data.previousPosition = data.position;
@@ -735,7 +703,40 @@ namespace EasySlimeTouchScript
 			}
 		}
 
-		public void OnPointerDown(PointerEventData eventData)
+		//// by Roman
+		//public void OnDrag(PointerData eventData)
+		//{
+		//	PointerData data;
+
+		//	Vector3 screenPos = eventData.position;
+		//	screenPos.z = m_Camera.transform.InverseTransformPoint(transform.position).z;
+		//	Vector3 pointWorld = m_Camera.ScreenToWorldPoint(screenPos);
+		//	Vector2 pointLocal = transform.InverseTransformPoint(pointWorld);
+
+		//	if (m_Pointers.Length == 0)
+		//	{
+		//		data.position = pointLocal;
+		//		data.previousPosition = pointLocal;
+		//		data.delta = Vector2.zero;
+		//		data.pointerId = eventData.pointerId;
+
+		//		m_Pointers.Add(data);
+		//	}
+
+		//	for (int i = 0; i < m_Pointers.Length; i++)
+		//	{
+		//		data = m_Pointers[i];
+		//		if (data.pointerId == eventData.pointerId)
+		//		{
+		//			data.previousPosition = data.position;
+		//			data.position = pointLocal;
+		//			m_Pointers[i] = data;
+		//			break;
+		//		}
+		//	}
+		//}
+
+		public void OnPointerDown(PointerData eventData)
 		{
 			PointerData data;
 
@@ -766,7 +767,7 @@ namespace EasySlimeTouchScript
 			}
 		}
 
-		public void OnPointerUp(PointerEventData eventData)
+		public void OnPointerUp(PointerData eventData)
 		{
 			for (int i = 0; i < m_Pointers.Length; i++)
 			{

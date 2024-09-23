@@ -83,6 +83,7 @@ MonoBehaviour:
   impulseStrength: 2
   lowForce: 0.5
   highForce: 1.4
+  lifeTime: 0.5
 --- !u!135 &4069987929934562986
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -202,7 +203,7 @@ PrefabInstance:
     - target: {fileID: 4540888380209373138, guid: 5a18b98d04fd16845941b8bee5e8638b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.93
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 4540888380209373138, guid: 5a18b98d04fd16845941b8bee5e8638b,
         type: 3}

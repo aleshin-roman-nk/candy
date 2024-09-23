@@ -12,6 +12,7 @@ public class TrowingObject : MonoBehaviour
 	[SerializeField] private float impulseStrength;
 	[SerializeField] private float lowForce;
 	[SerializeField] private float highForce;
+	[SerializeField] private float lifeTime = 0.2f;
 
 	private float _upY;
 	private float _downY;
@@ -19,7 +20,7 @@ public class TrowingObject : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		Destroy(gameObject, 0.2f);
+		Destroy(gameObject, lifeTime);
 	}
 
 	public void SetYLevels(float upY, float downY)
