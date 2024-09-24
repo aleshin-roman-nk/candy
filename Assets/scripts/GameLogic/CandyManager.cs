@@ -7,21 +7,29 @@ public class CandyManager : MonoBehaviour
 {
 	[SerializeField] private Vector3 candyArea = new Vector3 (1, 1, 1);
 	[SerializeField] private Candy[] candyPrefabs;
+	[SerializeField] private Candy[] donatPrefabs;
 	[SerializeField] private int candyMaxCount = 400;
 
 	[SerializeField] private TextMeshProUGUI candyCountText;
 
 	private PoolMulti<Candy> candiesPool;
+	private PoolMulti<Candy> donatsPool;
 
 	private bool dropCandy = false;
+
+	private int donCount = 0;
+	private int canCount = 0;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		candiesPool = new PoolMulti<Candy>(candyPrefabs, candyMaxCount, gameObject.transform);
+		donatsPool = new PoolMulti<Candy>(donatPrefabs, candyMaxCount, gameObject.transform);
 		candiesPool.autoExpand = true;
 
 		addCandies(candyMaxCount);
+
+		Debug.Log($"donats : {donCount}; candy : {canCount}");
 
 		//StartCoroutine(observeCandyCountCoroutine());
 		//StartCoroutine(dropCandyCoroutine());
@@ -60,11 +68,22 @@ public class CandyManager : MonoBehaviour
 
 	private void addCandy()
 	{
-		var iCandy = Random.Range(0, candyPrefabs.Length);
+		var condType = Random.Range(0, 100);
 
-		var candy = candiesPool.GetFreeElement();
-		candy.transform.position = GetRandomPointInArea();
-		candy.transform.rotation = Random.rotation;
+		if(condType < 97)// candy
+		{
+			canCount++;
+			var candy = candiesPool.GetFreeElement();
+			candy.transform.position = GetRandomPointInArea();
+			candy.transform.rotation = Random.rotation;
+		}
+		else// donat
+		{
+			donCount++;
+			var donat = donatsPool.GetFreeElement();
+			donat.transform.position = GetRandomPointInArea();
+			donat.transform.rotation = Random.rotation;
+		}
 	}
 
 	private void addCandies(int c)
