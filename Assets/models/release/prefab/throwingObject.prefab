@@ -180,6 +180,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Splash12_LavaCandy
       objectReference: {fileID: 0}
+    - target: {fileID: 674145348076294348, guid: 5a18b98d04fd16845941b8bee5e8638b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4540888380209373138, guid: 5a18b98d04fd16845941b8bee5e8638b,
         type: 3}
       propertyPath: m_LocalScale.x

@@ -661,7 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _slimeForTouchScript: {fileID: 1488668130}
-  pulseObjectPrefab: {fileID: 4119775673594756387, guid: fc0ccec71d4ddfc4b839bd93b3a6da60,
+  pulseObjectPrefab: {fileID: 4119775673594756387, guid: 87a718fb162e0714a82430edbbbab706,
     type: 3}
   pointerVis: {fileID: 6270122653301010643, guid: a88071fd9682a2346877a3cf5a816d5b,
     type: 3}
@@ -1189,7 +1189,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 0.5, z: 15}
+  m_LocalScale: {x: 6, y: 0.5, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 727950148}
@@ -1280,7 +1280,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
   m_LocalPosition: {x: 0.35, y: -3.32, z: -5.44}
-  m_LocalScale: {x: 10, y: 0.4, z: 10.5}
+  m_LocalScale: {x: 20, y: 0.4, z: 10.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 727950148}
@@ -1382,7 +1382,7 @@ Transform:
   m_GameObject: {fileID: 1039058932}
   serializedVersion: 2
   m_LocalRotation: {x: 0.21643952, y: -0, z: -0, w: 0.97629607}
-  m_LocalPosition: {x: 0, y: 2.72, z: 2.58}
+  m_LocalPosition: {x: 0, y: 6.62, z: 4.4}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1400,34 +1400,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470b1e56a199c3649bf5f42e7aedd036, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  candyArea: {x: 24, y: 2, z: 52}
+  candyArea: {x: 24, y: 10, z: 52}
   candyPrefabs:
-  - {fileID: 3370766485232207809, guid: fe1245de549452a4e921bd9327eaa1f4, type: 3}
   - {fileID: 6642460842210579644, guid: 1631d4a4582aeab4ba7866aab636463e, type: 3}
   - {fileID: 414691958363641923, guid: b0fb8e6d18de2e64e861ca9e1d792a3f, type: 3}
   - {fileID: 7470099070980265691, guid: d7d04c68d9821e144866e40691027b1f, type: 3}
   - {fileID: 8912995021747685226, guid: c5b310250f76ecd428c8573e22a5a817, type: 3}
   - {fileID: 3446410010473614300, guid: f8b66f1483f5ad44d953d21393673514, type: 3}
   - {fileID: 2507648528778435413, guid: 7a0defba372128c4aaf556416de18e21, type: 3}
-  - {fileID: 7351668405766787828, guid: 7d87e2cf3b5c83f498b07ea5ed74414d, type: 3}
   - {fileID: 4355784149500319552, guid: c4c520a7fe24ebb47ac4b084429adfc3, type: 3}
   - {fileID: 6926492698427095939, guid: 86529c32541111145aeb51f407706e54, type: 3}
-  - {fileID: 6900233839440425326, guid: 987ae6891ae56e844bd2dcad7cce4ad2, type: 3}
   - {fileID: 3734085167838923490, guid: 39b7d49591ee2e747a32b98771d990a2, type: 3}
   - {fileID: 408878032775126436, guid: dacdeee6726c0034d92e56f828600f23, type: 3}
+  - {fileID: -552875070828884107, guid: 9caec6ec16294034e96afa1a7e26e0c2, type: 3}
+  - {fileID: 4827605754361912226, guid: 7fe8ddc696d259f4ba516516c847132d, type: 3}
   - {fileID: 6447375583831491821, guid: 910727cfcf3b34a41a15b459cd49f59d, type: 3}
   - {fileID: 7272850982662096024, guid: e97139006d56ada4ab99e048c46e6451, type: 3}
   - {fileID: 5989538235511085071, guid: ebf79a448b2344c4680a201b65fefa9f, type: 3}
+  - {fileID: -7739438790201345831, guid: 2e197abf4223d9e438caee39a2a60b45, type: 3}
   - {fileID: 2257005313844548423, guid: 9723eeb42ab36c040950cac0ecbcbeda, type: 3}
   - {fileID: 2627028300126534616, guid: c8be84068c023d8419ab8fd65dd459f7, type: 3}
   - {fileID: 6813565376519988668, guid: e12c7d9b8b243ba45a32487eaba5bcf8, type: 3}
   - {fileID: -4248203959989472387, guid: 958115844f583204c9eaf6367c0b47f4, type: 3}
   - {fileID: -5595695415594345751, guid: e5539a1d405e8424dbf511fb9ec4f3e5, type: 3}
-  - {fileID: 274501920698094921, guid: 09de5f4049f0f3047b3275616b06df8c, type: 3}
-  - {fileID: -4123050452020363750, guid: 53431ae5d8d3f1d4480525c72fa8feaf, type: 3}
-  - {fileID: 1368324818213338092, guid: 683dae633f3f8c04ba8d9ac7f08e0a1e, type: 3}
   - {fileID: 9063470701099880398, guid: 1ba18ee7d87578746ab9985070c17c2c, type: 3}
   - {fileID: 7734594499613204032, guid: 6dbdadc1f782eca48bff01799e6da525, type: 3}
+  - {fileID: 6962634622497531152, guid: b47f6018466508042b24c268d54022e2, type: 3}
   donatPrefabs:
   - {fileID: -882742126938989124, guid: 3b66feed51c27bf4fae0d3c02204ec0a, type: 3}
   - {fileID: 4340153646760874029, guid: acfd15fdff77405449d53842b424f050, type: 3}
@@ -1446,7 +1444,7 @@ MonoBehaviour:
   - {fileID: -4146646932469069689, guid: 9b740f49bd277054dbc71e6a898020b1, type: 3}
   - {fileID: 5341451915104831505, guid: ec8e5f5b3641f8043ad498524c2da1c9, type: 3}
   - {fileID: 5824464715489909799, guid: adca7dfcce4c76448a6aa556a506ee73, type: 3}
-  candyMaxCount: 700
+  candyMaxCount: 2100
   candyCountText: {fileID: 489978697}
 --- !u!1 &1205587930
 GameObject:
@@ -1554,8 +1552,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 7.353982, z: 1}
-  m_Center: {x: 0.000000015388038, y: -3.1770067, z: 0.000000015243579}
+  m_Size: {x: 1, y: 1.2855983, z: 1}
+  m_Center: {x: 6.919246e-10, y: -0.1428544, z: 6.8542894e-10}
 --- !u!23 &1244993521
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1563,7 +1561,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1244993519}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1616,7 +1614,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 3, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 0.5, z: 10.5}
+  m_LocalScale: {x: 20, y: 0.5, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 727950148}
@@ -1778,7 +1776,7 @@ Transform:
   m_GameObject: {fileID: 1488668128}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 24.12}
+  m_LocalPosition: {x: 0, y: 0, z: 30}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1802,15 +1800,15 @@ MonoBehaviour:
   m_VertexDistance: 0.19
   m_Border: 0.4
   m_PressForce: 3
-  m_PressDepth: 1
-  m_PressRadiusMin: 1
-  m_PressRadiusMax: 1.5
+  m_PressDepth: 1.2
+  m_PressRadiusMin: 1.66
+  m_PressRadiusMax: 1.99
   m_DragForce: 1
   m_DragRadius: 2.46
-  m_DragElasticityDistance: 1
+  m_DragElasticityDistance: 0.89
   m_UpdateSpeed: 15
   m_RegenerateOverTime: 1
-  m_RegenerateSpeed: 0.7
+  m_RegenerateSpeed: 0.5
   m_SFXOnTouchDown: {fileID: 280532499}
   m_SFXContinuous: {fileID: 1476200200}
 --- !u!65 &1488668131
@@ -2002,7 +2000,7 @@ Transform:
   m_GameObject: {fileID: 1823688464}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
-  m_LocalPosition: {x: 0, y: 5.18, z: 0.12}
+  m_LocalPosition: {x: 0, y: 6.3, z: 0.12}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2224,8 +2222,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 7.4540043, z: 1}
-  m_Center: {x: -0.000000015630267, y: 3.227017, z: -0.000000015483533}
+  m_Size: {x: 1, y: 1.3330426, z: 1}
+  m_Center: {x: -8.0670026e-10, y: 0.16655092, z: -7.991271e-10}
 --- !u!23 &2138370029
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2233,7 +2231,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138370027}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -2286,7 +2284,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: -3, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 0.5, z: 10.5}
+  m_LocalScale: {x: 20, y: 0.5, z: 20}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 727950148}

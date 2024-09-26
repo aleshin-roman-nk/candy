@@ -3,7 +3,12 @@ guid: fc9c0cf471ea1ad47a5d1ab1ac8b618c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Candy Specular
+    second: {fileID: 2100000, guid: 17d55487e63eb604b95cd8c075501f7e, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

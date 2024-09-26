@@ -3,7 +3,12 @@ guid: d047dc08edd8169498d61af086832117
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Pastry
+    second: {fileID: 2100000, guid: 9bd68b38d501ce34fad29a6929fff663, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

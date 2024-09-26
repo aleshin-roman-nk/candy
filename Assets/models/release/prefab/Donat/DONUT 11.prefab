@@ -1594,6 +1594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disappearYLevel: -30
+  flyAwayDisnace: 40
 --- !u!54 &-4973403437005193066
 Rigidbody:
   m_ObjectHideFlags: 0

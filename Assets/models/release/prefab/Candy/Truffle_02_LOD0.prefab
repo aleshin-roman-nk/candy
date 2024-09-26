@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5934072268104663026}
   - component: {fileID: 257076100347508375}
   - component: {fileID: 7734594499613204032}
-  - component: {fileID: 3904633405261534011}
   - component: {fileID: 2869509496536420747}
+  - component: {fileID: -586199872437898805}
   m_Layer: 9
   m_Name: Truffle_02_LOD0
   m_TagString: Untagged
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_LocalScale: {x: 30, y: 30, z: 30}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,8 +64,8 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5645595934283163671, guid: 50d58984b9bd60a499bac4d9e7fa2793, type: 3}
-  - {fileID: 6222442836580327061, guid: 50d58984b9bd60a499bac4d9e7fa2793, type: 3}
+  - {fileID: 2100000, guid: 9bd68b38d501ce34fad29a6929fff663, type: 2}
+  - {fileID: 2100000, guid: 9bd68b38d501ce34fad29a6929fff663, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,27 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disappearYLevel: -30
---- !u!65 &3904633405261534011
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8282122146236016358}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.039638944, y: 0.039638955, z: 0.04028823}
-  m_Center: {x: 0, y: -1.431311e-17, z: 0.0010071958}
+  flyAwayDisnace: 40
 --- !u!54 &2869509496536420747
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,3 +128,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &-586199872437898805
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8282122146236016358}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.020144114
+  m_Center: {x: 0, y: 0, z: 0.0010071958}

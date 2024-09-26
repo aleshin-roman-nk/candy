@@ -233,6 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   disappearYLevel: -30
+  flyAwayDisnace: 40
 --- !u!1 &4647248158802862954
 GameObject:
   m_ObjectHideFlags: 0

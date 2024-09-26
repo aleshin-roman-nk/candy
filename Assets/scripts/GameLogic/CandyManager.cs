@@ -26,26 +26,29 @@ public class CandyManager : MonoBehaviour
 		candiesPool = new PoolMulti<Candy>(candyPrefabs, candyMaxCount, gameObject.transform);
 		donatsPool = new PoolMulti<Candy>(donatPrefabs, candyMaxCount, gameObject.transform);
 		candiesPool.autoExpand = true;
+		donatsPool.autoExpand = true;
 
 		addCandies(candyMaxCount);
 
-		Debug.Log($"donats : {donCount}; candy : {canCount}");
+		//Debug.Log($"donats : {donCount}; candy : {canCount}");
 
 		//StartCoroutine(observeCandyCountCoroutine());
 		//StartCoroutine(dropCandyCoroutine());
 	}
 
+	private int CandyAndDonatsCount => candiesPool.ActiveObjects + donatsPool.ActiveObjects;
+
 	// Update is called once per frame
 	void Update()
 	{
-		candyCountText.text = candiesPool.ActiveObjects.ToString();
+		candyCountText.text = (CandyAndDonatsCount).ToString();
 	}
 
 	private IEnumerator observeCandyCountCoroutine()
 	{
 		while (true) 
 		{
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(5f);
 
 			// If the lack of candies is greater than N, call addCandies(N)
 			//addCandies(candyMaxCount - candiesPool.ActiveObjects);
@@ -70,7 +73,7 @@ public class CandyManager : MonoBehaviour
 	{
 		var condType = Random.Range(0, 100);
 
-		if(condType < 97)// candy
+		if(condType < 99)// candy
 		{
 			canCount++;
 			var candy = candiesPool.GetFreeElement();

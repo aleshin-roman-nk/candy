@@ -5,6 +5,7 @@ using UnityEngine;
 public class Candy : MonoBehaviour
 {
 	[SerializeField] private float disappearYLevel = -2;
+	[SerializeField] private float flyAwayDisnace = 30;
 
 	private Vector3 restPosition;
 	private Vector3 prevPosition;
@@ -29,7 +30,7 @@ public class Candy : MonoBehaviour
 	{
 		if (isFlying) return;
 
-		StartCoroutine(flyCoroutine(30 * goDirection, force));
+		StartCoroutine(flyCoroutine(flyAwayDisnace * goDirection, force));
 	}
 
 	private IEnumerator flyCoroutine(Vector3 toPoint, float force)
@@ -56,7 +57,7 @@ public class Candy : MonoBehaviour
 
 		animateFly.valueA = transform.position;
 		animateFly.valueB = restPosition;
-		animateFly.duration = 0.7f;
+		animateFly.duration = 1.4f;
 
 		while (animateFly.update(null))
 			yield return null;
