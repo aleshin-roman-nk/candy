@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Candy : MonoBehaviour
 {
-	[SerializeField] private float disappearYLevel = -2;
-	[SerializeField] private float flyAwayDisnace = 30;
+	[SerializeField] private float disappearYLevel = -30;
+	[SerializeField] private float flyAwayDisnace = 40;
 
 	private Vector3 restPosition;
 	private Vector3 prevPosition;

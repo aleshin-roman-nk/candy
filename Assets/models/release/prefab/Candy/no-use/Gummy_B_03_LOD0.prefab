@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &434440448849933951
+--- !u!1 &2867156835492512098
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 780520390268271955}
-  - component: {fileID: 7265170548884267508}
-  - component: {fileID: 837880326870897333}
-  - component: {fileID: 3734085167838923490}
-  - component: {fileID: 1750583666025730839}
-  - component: {fileID: 1834382949381594948}
+  - component: {fileID: 2750987267125100638}
+  - component: {fileID: 6944058911713709041}
+  - component: {fileID: 3582195222309091915}
+  - component: {fileID: 6854446955411468385}
+  - component: {fileID: 45406842545153269}
+  - component: {fileID: 4638933766388035643}
   m_Layer: 9
-  m_Name: Gummy_A_02_LOD0
+  m_Name: Gummy_B_03_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &780520390268271955
+--- !u!4 &2750987267125100638
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434440448849933951}
+  m_GameObject: {fileID: 2867156835492512098}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -36,21 +36,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!33 &7265170548884267508
+--- !u!33 &6944058911713709041
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434440448849933951}
-  m_Mesh: {fileID: -3532067608669193378, guid: 439aa14939cdac849b412988ce600d7f, type: 3}
---- !u!23 &837880326870897333
+  m_GameObject: {fileID: 2867156835492512098}
+  m_Mesh: {fileID: 1712393035988964899, guid: 7065df2499412f744ab13256bbf1c0a3, type: 3}
+--- !u!23 &3582195222309091915
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434440448849933951}
+  m_GameObject: {fileID: 2867156835492512098}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,27 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3734085167838923490
-MonoBehaviour:
+--- !u!136 &6854446955411468385
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434440448849933951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ba93d2add6a7c44ea8bed5d335f6f36, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  disappearYLevel: -30
-  flyAwayDisnace: 40
---- !u!65 &1750583666025730839
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434440448849933951}
+  m_GameObject: {fileID: 2867156835492512098}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -118,16 +104,18 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.03140326, y: 0.04328681, z: 0.019449677}
-  m_Center: {x: 0, y: 0.00014226793, z: 0.000003260561}
---- !u!54 &1834382949381594948
+  serializedVersion: 2
+  m_Radius: 0.009790868
+  m_Height: 0.06661626
+  m_Direction: 1
+  m_Center: {x: 0.0006736121, y: 0.000958428, z: 0.00001024036}
+--- !u!54 &45406842545153269
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 434440448849933951}
+  m_GameObject: {fileID: 2867156835492512098}
   serializedVersion: 4
   m_Mass: 3
   m_Drag: 0
@@ -148,3 +136,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4638933766388035643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2867156835492512098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ba93d2add6a7c44ea8bed5d335f6f36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  disappearYLevel: -30
+  flyAwayDisnace: 40
