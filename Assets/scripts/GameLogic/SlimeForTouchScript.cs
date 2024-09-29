@@ -8,6 +8,7 @@ using Unity.Mathematics;
 using UnityEngine.Rendering;
 using UnityEngine.Jobs;
 using UnityEngine.EventSystems;
+using Assets.scripts.GameLogic;
 
 namespace EasySlimeTouchScript
 {
@@ -16,6 +17,9 @@ namespace EasySlimeTouchScript
 	[RequireComponent(typeof(BoxCollider))]
 	public class SlimeForTouchScript : MonoBehaviour/*, IPointerDownHandler, IPointerUpHandler, IDragHandler*/
 	{
+		[SerializeField, Tooltip("Translator TouchScript gestures.")]
+		TouchObserver touchObserver = null;
+
 		[SerializeField, Tooltip("The camera that will be used for input and rendering of the slime.")]
 		Camera m_Camera = null;
 
@@ -344,6 +348,10 @@ namespace EasySlimeTouchScript
 
 		private void OnEnable()
 		{
+			touchObserver.PointerDown += TouchObserver_PointerDown;
+			touchObserver.PointerUp += TouchObserver_PointerUp;
+			touchObserver.PointerDrag += TouchObserver_PointerDrag;
+
 			m_Pointers = new NativeList<PointerData>(20, Allocator.Persistent);
 
 			m_Mesh = new Mesh();
@@ -366,8 +374,36 @@ namespace EasySlimeTouchScript
 			}
 		}
 
+		private void TouchObserver_PointerDrag(object sender, TouchTrakerPointer e)
+		{
+			PointerData d = new PointerData();
+			d.position = e.point;
+			d.pointerId = e.pointerId;
+			OnDrag(d);
+		}
+
+		private void TouchObserver_PointerUp(object sender, TouchTrakerPointer e)
+		{
+			PointerData d = new PointerData();
+			d.position = e.point;
+			d.pointerId = e.pointerId;
+			OnPointerUp(d);
+		}
+
+		private void TouchObserver_PointerDown(object sender, TouchTrakerPointer e)
+		{
+			PointerData d = new PointerData();
+			d.position = e.point;
+			d.pointerId = e.pointerId;
+			OnPointerDown(d);
+		}
+
 		private void OnDisable()
 		{
+			touchObserver.PointerDown -= TouchObserver_PointerDown;
+			touchObserver.PointerUp -= TouchObserver_PointerUp;
+			touchObserver.PointerDrag -= TouchObserver_PointerDrag;
+
 			m_Pointers.Dispose();
 
 			CleanUpInternalMeshData();
