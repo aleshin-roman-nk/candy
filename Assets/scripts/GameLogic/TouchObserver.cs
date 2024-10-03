@@ -65,8 +65,6 @@ namespace Assets.scripts.GameLogic
 		{
 			_touchTrackManager.PushPoint(pressGesture.ScreenPosition);
 		}
-
-
 	}
 }
 
